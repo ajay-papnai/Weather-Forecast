@@ -24,6 +24,7 @@ import retrofit2.Response;
 public class Repository {
 
     private Application application;
+    private String api_key="c39ca303e0cc44d7811173923240308";  // use your own api key
 
     public Repository(Application application) {
         this.application = application;
@@ -35,7 +36,7 @@ public class Repository {
     public MutableLiveData<List<weather_location>> getLocationMutableLiveData(String cityName){
         WeatherApi weatherApi = RetrofitInstance.getweatherApi();
 
-        Call<Weather> weatherCall = weatherApi.getWeather("c39ca303e0cc44d7811173923240308", cityName , "1" , "yes" , "no") ;
+        Call<Weather> weatherCall = weatherApi.getWeather(api_key, cityName , "1" , "yes" , "no") ;
 
         //Log.d("TAGY", ""+weatherCall);
         //Log.d("Repository", "API Call: " + weatherCall.request().url());
@@ -80,7 +81,7 @@ public class Repository {
     public MutableLiveData<List<current_weather>> getCurrentMutablelLiveData(String cityName){
         WeatherApi weatherApi = RetrofitInstance.getweatherApi();
 
-        Call<Weather> weatherCall = weatherApi.getWeather("c39ca303e0cc44d7811173923240308", cityName , "1" , "yes" , "no") ;
+        Call<Weather> weatherCall = weatherApi.getWeather(api_key, cityName , "1" , "yes" , "no") ;
 
         weatherCall.enqueue(new Callback<Weather>() {
             @Override
@@ -122,7 +123,7 @@ public class Repository {
     public MutableLiveData<List<weather_forecast>> getForecastMutableLiveData(String CityName){
 
         WeatherApi weatherApi = RetrofitInstance.getweatherApi();
-        Call<Weather> weatherCall = weatherApi.getWeather("c39ca303e0cc44d7811173923240308", CityName , "1" , "yes" , "no") ;
+        Call<Weather> weatherCall = weatherApi.getWeather(api_key, CityName , "1" , "yes" , "no") ;
 
         weatherCall.enqueue(new Callback<Weather>() {
             @Override
