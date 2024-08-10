@@ -30,7 +30,7 @@ The **Weather Forecasting App** provides real-time weather information based on 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/weather-forecasting-app.git
+   git clone https://github.com/ajay-papnai/Weather-Forecast
 
 2. **Open in Android Studio**
 
